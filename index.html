@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namora Comigo?</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            padding: 5em 0;
+            background-color: pink;
+        }
+        button{
+            font-size: 1.2em;
+            padding: 0.5em 1.8em;
+            margin: 4em;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+        }
+        .no{
+            position: absolute;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 id="text">Quer Namorar Comigo ?</h1>
+        <div class="content">
+            <button id="yes" onclick="handleYes()">Sim</button>
+            <button id="no" onmouseenter="handleClick()" onclick="handleClick()">Não</button>
+        </div>
+    </main>
+</body>
+<script>
+
+
+function handleClick() {
+    let btnNo = document.querySelector('#no')
+    const neg = !btnNo
+    const margin = Math.floor(Math.random() * 400) + 20;
+    const left = Math.floor(Math.random() * 300) + 20;
+    const right = Math.floor(Math.random() * 200) + 50;
+
+    if(!neg) {
+    btnNo.classList.add('no')
+    btnNo.style.marginLeft = `${left}px`
+    btnNo.style.marginTop = `${margin}px`
+    btnNo.style.marginRight = `${right}px`
+    }
+}
+
+function handleYes () {
+   
+    const change = document.querySelector('.content')
+    const text = document.querySelector('#text')
+    
+    text.innerHTML = 'Se fudeu kkkkkkkkk'
+    change.innerHTML = "<img src=\"coracao.webp\" width=\"400px\" height=\"250px\">"
+}
+
+</script>
+</html>
